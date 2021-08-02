@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import cmath
+
 
 #Special Thanks to https://blog.christianperone.com/2010/02/riemann-zeta-function-visualizations-with-python/#comment-287722
-#& https://towardsdatascience.com/the-holy-grail-of-mathematics-animated-visualization-of-the-riemann-zeta-zeros-db47c31dfce9
 
 
 """
@@ -27,11 +28,11 @@ def Cfactdivform(itr):
     lst=[]
     lst2=[]
     for x in range(1,itr+1):
-        c = complex(x,x+1)/complex(-4,7)**(1/itr)
+        c = complex(x,x+1)
         lst.append(c)
         formula*=c
         lst2.append(formula)
-    return lst,lst2,formula
+    return lst,lst2,formula/complex(-4,7)
 
 def Cfactdiv2(itr):
     formula=1
@@ -44,19 +45,27 @@ def Cfactdiv2(itr):
         lst2.append(formula)
     return lst,lst2,formula
 
-itr=3
-
-
-cf1,cf2=Cfact(itr)
-print(cf1)
-print(cf2)
+itr=10
 
 print("-------------------------")
 
 
 lst,lst2,formula=Cfactdiv2(itr)
-#print("Lst: ",lst)
+print("Magnitude: ",abs(formula))
+abslst=[]
+rads=[]
+theta=[]
 
+for x in lst2:
+    r,t = cmath.polar(x)
+    abslst.append(abs(x))
+    rads.append(abs(r))
+    theta.append(abs(t))   
+
+plt.polar(rads, rads, 'g.')
+print(rads)
+plt.axes(projection = 'polar')
+plt.show()
 
 #----------------------------------------
 arr = np.array(lst2)
@@ -72,14 +81,28 @@ plt.show()
     
 #----------------------------------------
 lst,lst2,formula=Cfactdivform(itr)
+print("Magnitude: ",abs(formula))
+abslst=[]
+rads=[]
+theta=[]
+print("Trial")
+plt.axes(projection = 'polar')
+
+
+for x in lst:
+    r,t = cmath.polar(x)
+    abslst.append(abs(x))
+    rads.append(abs(r))
+    theta.append(abs(t))    
+    plt.polar(x, r, 'g.')  
+    
+plt.show()
 
 #----------------------------------------
 arr = np.array(lst2)
 x = arr.real
-# extract imaginary part using numpy array
 y = arr.imag
   
-# plot the complex numbers
 plt.plot(x, y, 'g*')
 plt.ylabel('Imaginary')
 plt.xlabel('Real')
@@ -95,5 +118,19 @@ divided by the product of (1+2i)(2+3i) or -4+7i
 Complex1=complex(1,2)
 Complex2=complex(2,3)
 Product=formula/(Complex1*Complex2)
-print("C(n)!/C(2)!: ",Product)
+print("C(n)!/C(2)!: ", )
+print("Magnitude of z: ", abs(Product))
 
+abslst=[]
+rads=[]
+theta=[]
+
+for x in lst2:
+    r,t = cmath.polar(x)
+    abslst.append(abs(x))
+    rads.append(abs(x))
+    theta.append(abs(t))    
+plt.polar(rads, theta, 'g.')  
+    
+plt.axes(projection = 'polar')
+plt.show()
