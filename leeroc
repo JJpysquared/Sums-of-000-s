@@ -14,7 +14,7 @@ C(n)!=(1+2i)(2+3i)(3+4i)(4+5i)(5+6i)(6+7i)...
 C(2)!=(1+2i)(2+3i)
 C(3)!=(1+2i)(2+3i)(3+4i)
 
-Consider C(n)! as a net if want to catch all the 
+Consider C(n)! as a net if you want to catch all the 
 numbers we leave it as is but if we want to catch the numbers
 that say dont have have a product of 2 we do the following: 
 
