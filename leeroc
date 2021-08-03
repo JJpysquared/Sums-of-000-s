@@ -11,6 +11,8 @@ Factorials of a complex kind
 
 C(n)!=(1+2i)(2+3i)(3+4i)(4+5i)(5+6i)(6+7i)...
 
+we do not start the series as (0+i) because all real numbers would result in 0
+
 C(2)!=(1+2i)(2+3i)
 C(3)!=(1+2i)(2+3i)(3+4i)
 
