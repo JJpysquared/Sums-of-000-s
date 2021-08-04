@@ -61,7 +61,7 @@ def Cfactdiv2(itr):
         lst2.append(formula)
     return lst,lst2,formula
 
-itr=4
+itr=100
 
 print("-------------------------")
 
@@ -70,6 +70,17 @@ print("Magnitude: ",abs(formula))
 abslst=[]
 rads=[]
 theta=[]
+
+for x in lst:
+    r,t = cmath.polar(x)
+    abslst.append(abs(x))
+    rads.append(abs(r))
+    theta.append(abs(t))   
+
+plt.polar(rads, theta, 'g.')
+print(rads)
+plt.axes(projection = 'polar')
+plt.show()
 
 for x in lst2:
     r,t = cmath.polar(x)
