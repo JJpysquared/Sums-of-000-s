@@ -1,0 +1,15 @@
+#2*SUM(2x-2x^1/2)/x - x = 3
+
+#Always 3 function:
+rando=3
+
+def just_3(n):
+    form=0
+    for x in range(2,n+2):
+        form+=2*x-(2*x)**1/2 
+    return 2*form/n-n
+
+for x in range(1,rando):
+    Th3=just_3(x)
+    print(Th3)
+    
