@@ -1,7 +1,7 @@
 #2*SUM(2x-2x^1/2)/x - x = 3
 
 #Always 3 function:
-rando=3
+rando=10
 
 def just_3(n):
     form=0
